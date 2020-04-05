@@ -54,7 +54,7 @@ io.on('connection', (socket) => {
 
         if(user){
             io.to(user.room).emit('message',generateMessage('Admin',`${user.username} has left!`))
-            io.to(user.room).emit('roomdata', {
+            io.to(user.room).emit('roomData', {
                 room : user.room,
                 users : getUserInRoom(user.room)
             })
